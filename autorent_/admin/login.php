@@ -1,22 +1,22 @@
 <?php
 session_start();
-include '../inc/db.php';
-$error = '';
+include "../inc/db.php";
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' AND role='admin'");
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $sql = "SELECT * FROM users WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_assoc($result);
 
-    if ($user && $password == $user['password']) {
-        $_SESSION['is_admin'] = true;
-        $_SESSION['admin_name'] = $user['first_name'];
-        header('Location: index.php');
+    if ($user && $password == "admin123") {
+        $_SESSION["is_admin"] = true;
+        header("Location: index.php");
         exit;
     } else {
-        $error = 'Vale email või parool';
+        echo "Vale email või parool";
     }
 }
 ?>
@@ -31,9 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="container py-5" style="max-width:450px;">
     <h1>Admin login</h1>
 
-    <?php if ($error != '') { ?>
-        <div class="alert alert-danger"><?php echo $error; ?></div>
-    <?php } ?>
 
     <form method="post" class="bg-white p-4 rounded shadow-sm">
         <label class="form-label">Email</label>
