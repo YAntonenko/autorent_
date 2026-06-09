@@ -8,7 +8,7 @@
             <a href="autod.php" class="btn btn-primary btn-lg">Vaata autosid</a>
         </div>
         <div class="col-md-6">
-            <img src="https://loremflickr.com/700/400/car" class="img-fluid rounded hero-img" alt="Auto">
+            <img src="https://www.bocadolobo.com/en/inspiration-and-ideas/wp-content/uploads/2024/12/The-Top-5-Luxury-Cars-imagem-de-capa.png" class="img-fluid rounded hero-img" alt="Auto">
         </div>
     </div>
 
