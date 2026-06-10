@@ -29,16 +29,17 @@ if ($_POST) {
 }
 ?>
 
-<h1>Lisa auto</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Lisa auto</h1>
 
-<form method="post">
-
-    <?php include "car_form.php"; ?>
-
-    <button class="btn btn-success">
-        Salvesta
-    </button>
-
-</form>
+            <form method="post">
+                <?php include "car_form.php"; ?>
+                <button class="btn btn-success">Salvesta</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <?php include "_admin_footer.php"; ?>
